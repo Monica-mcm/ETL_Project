@@ -2,7 +2,7 @@
 
 Project Name: 
 
-Look for a Starbuck Near Me
+Look for a Starbucks Near Me
 
 Tem Members:
 
