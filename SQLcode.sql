@@ -7,9 +7,9 @@ create table starbucks(
 	city text,
 	state_name text,
 	country_name text,
-	postcode int,
-	longitude int,
-	latitude int
+	postcode text,
+	longitude double,
+	latitude double
 )
 
 
