@@ -1,9 +1,10 @@
+
 -- Import Table for Strabucks locations
 
-drop table if exists starbucks
+drop table if exists starbucks;
 
 create table starbucks(
-	id INT primary key,
+	id_starbucks INT primary key,
 	store_name text,
 	street_address text,
 	state_name text,
@@ -11,52 +12,40 @@ create table starbucks(
 	postcode numeric,
 	longitude numeric,
 	latitude numeric
-)
+);
 
-select * from starbucks
-
--- import from wizard starbucks csv
-
-select * from starbucks
+select * from starbucks;
 
 -- Import Table for Post Codes
 
-drop table if exists Postcodes
+drop table if exists Postcodes;
 
 create table Postcodes(
-	id INT primary key,
+	id_pc INT primary key,
 	Postcode numeric,
 	state_name text,
 	municipality_name text,
 	City text,
 	Settlement text
-)
+);
 
-select * from Postcodes
-
--- import from wizard Postal Codes
-
-select * from Postcodes
+select * from Postcodes;
 
 
 -- Import Table for Air B&B properties
 
-drop table if exists AirBNB
+drop table if exists AirBNB;
 
 create table AirBNB(
-    id int primary key,
+    id_air int primary key,
     name text,
     neighbourhood text,
     latitude numeric,
     longitude numeric,
     room_type text
-)
+);
 
-select * from AirBNB
-
--- import from wizard Postal Codes
-
-select * from AirBNB
+select * from AirBNB;
 
 -- Transform AIR B&B with latitude & longitude with only 2 decimals
 
@@ -64,7 +53,7 @@ alter table AirBNB
 add column latitude_aprox numeric,
 add column longitude_aprox numeric;
 
-select * from AirBNB
+select * from AirBNB;
 
 
 update AirBNB
@@ -73,11 +62,11 @@ set latitude_aprox = TRUNC(latitude, 2);
 update AirBNB
 set longitude_aprox = TRUNC(longitude, 2);
 
-select * from AirBNB
+select * from AirBNB;
 
 
 -- JOIN 3 TABLES
-drop table if exists joinedtable
+drop table if exists joinedtable;
 
 --create table joinedtable as
 --select a.name, a.neighbourhood, a.latitude_aprox, a.longitude_aprox,
@@ -87,7 +76,7 @@ drop table if exists joinedtable
 --
 --where a.latitude_aprox = b.latitude and a.longitude_aprox = b.longitude;
 
-drop table if exists joinedtable2
+drop table if exists joinedtable2;
 
 create table joinedtable2 as
 select a.name, a.neighbourhood, a.latitude_aprox, a.longitude_aprox,
@@ -111,4 +100,7 @@ from joinedtable2 a
 LEFT JOIN Postcodes b
 ON a.postcode = b.postcode;
 
-select * from joinedtable3
+select * from joinedtable3;
+
+
+select * from starbucks;
