@@ -3,67 +3,69 @@ I.	Sources of data for extraction:
 The identified data sources are:
 -	Air B&B Mexico City: Contains the information of all Air B&B locations in Mexico City registered until October 2019.
 o	Variables:
-	id
-	name
-	host_id
-	host_name
-	neighbourhood_group
-	neighbourhood
-	latitude
-	longitude
-	room_type
-	price
-	minimum_nights
-	number_of_reviews
-	last_review
-	reviews_per_month
-	calculated_host_listings_count
-	availability_365
+-	id
+-	name
+-	host_id
+-	host_name
+-	neighbourhood_group
+-	neighbourhood
+-	latitude
+-	longitude
+-	room_type
+-	price
+-	minimum_nights
+-	number_of_reviews
+-	last_review
+-	reviews_per_month
+-	calculated_host_listings_count
+-	availability_365
+
 -	Starbucks Locations Worldwide: This dataset includes a record for every Starbucks or subsidiary store location currently in operation until February 2017.
 o	Variables:
-	Brand
-	Store Number
-	Store Name
-	Ownership Type
-	Street Address
-	City
-	State/Province
-	Country
-	Postcode
-	Phone Number
-	Timezone
-	Longitude
-	Latitude
+-	Brand
+-	Store Number
+-	Store Name
+-	Ownership Type
+-	Street Address
+-	City
+-	State/Province
+-	Country
+-	Postcode
+-	Phone Number
+-	Timezone
+-	Longitude
+-	Latitude
 
 -	Postal Codes: Provides the existing postal code for each settlement and municipality in Mexico (Country).
 o	Variables
-	Código Postal
-	Estado
-	Municipio
-	Ciudad
-	Tipo de Aseentamiento
-	Asentamiento
-	Clave de oficina
+-	Código Postal
+-	Estado
+-	Municipio
+-	Ciudad
+-	Tipo de Aseentamiento
+-	Asentamiento
+-	Clave de oficina
 
 II.	Type of transformation needed for this data (cleaning, joining, filtering, aggregating, etc).
 -	Cleaning:
 o	Postal Codes: 
-	Change name columns to English
+-	Change name columns to English
+
 -	Filtering:
 o	Postal Codes: 
-	Drop Settlement Type and Office Code
-	Filter only Mexico City Postal Codes
+-	Drop Settlement Type and Office Code
+-	Filter only Mexico City Postal Codes
 o	AirB&B:
-	Keep name, neighbourhood, latitude, longitude, room_type and price.  
+-	Keep name, neighbourhood, latitude, longitude, room_type and price.  
 o	Starbucks:
-	Keep store name, street address, state/province, country, postcode, longitude, latitude.
-	Filter only country = MX for Mexico
-	Filter only state/province = DIF for Mexico City Starbucks locations
+-	Keep store name, street address, state/province, country, postcode, longitude, latitude.
+-	Filter only country = MX for Mexico
+-	Filter only state/province = DIF for Mexico City Starbucks locations
 -	Transform:
 o	Starbucks:
-	Rename the variables without spaces so SQL alchemy run smoothly
+-	Rename the variables without spaces so SQL alchemy run smoothly
 o	All tables:
-	Create an index variable as id for each table
+-	Create an index variable as id for each table
 
 
 
