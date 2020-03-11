@@ -17,7 +17,7 @@ create table starbucks(
 select * from starbucks;
 
 -- Import Table for Post Codes
-
+drop table if exists postcodes;
 drop table if exists Postcodes;
 
 create table Postcodes(
@@ -101,6 +101,3 @@ LEFT JOIN Postcodes b
 ON a.postcode = b.postcode;
 
 select * from joinedtable3;
-
-
-select * from starbucks;
